@@ -1,5 +1,18 @@
+.basket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .basket-container {
     display: flex;
-    border: 2px solid black;
-    gap: 15px;
+    border: 2px solid blue;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket-container:hover {
+    background-color: yellow;
 }
