@@ -9,6 +9,7 @@ function ListCarts({basket}) {
                 <p>ilość produtków {carts.totalProducts}</p>
                 <div>
                     <button>delete</button>
+                    <button>statistic</button>
                 </div>
             </div>
         ))}
