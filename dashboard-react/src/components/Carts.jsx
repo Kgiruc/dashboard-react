@@ -2,14 +2,14 @@ import { useEffect, useState } from "react"
 import ListCarts from "./ListCarts"
 
 
-function Cart() {
+function Carts() {
     const [basket, setBasket] = useState([{}])
-
+ 
     useEffect(() => {
         fetch('https://dummyjson.com/carts')
             .then(res => res.json())
             .then(data => {
-                setBasket(data)
+                setBasket(data.carts)
                 console.log(data)
             })
             .catch(err => {
@@ -17,15 +17,23 @@ function Cart() {
             })
     }, [])
 
+    function deleteBasket(id) {
+        const newList = Object.values(basket.carts).filter(e => e.id != id)
+        console.log(newList)
+    } 
+   
+    
+
+ 
+
     return (
         <div>
             {
-                basket.carts ? (<ListCarts basket={basket}/>) : (
-                <p>loding...</p>
-                )
+                basket &&
+                <ListCarts basket={basket} deleteBasket={deleteBasket}/>  
             }
         </div>
     )
 }
 
-export default Cart
+export default Carts

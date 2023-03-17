@@ -1,14 +1,16 @@
 import React from 'react'
+import DeleteBtn from './DeleteBtn'
 
-function ListCarts({basket}) {
+function ListCarts({basket, deleteBasket}) {
   return (
     <div className='baskets'>
-        {basket.carts.map((carts) => (
+        {basket.carts.map((carts) => ( 
             <div key={carts.id} className="basket-container">
-                <p>koszyk {carts.id}</p>
-                <p>ilość produtków {carts.totalProducts}</p>
+                <p>koszyk {carts.userId}</p>
+                <p>ilość produtków: {carts.totalProducts}</p>
                 <div>
-                    <button>delete</button>
+                    <DeleteBtn getBasketId={carts.id} basket={basket}/>
+                    <button onClick={() => deleteBasket(carts.id)}>x</button>
                     <button>statistic</button>
                 </div>
             </div>
