@@ -4,7 +4,7 @@ import DeleteBtn from './DeleteBtn'
 function ListCarts({basket, deleteBasket}) {
   return (
     <div className='baskets'>
-        {basket.carts.map((carts) => ( 
+        {basket.map((carts) => ( 
             <div key={carts.id} className="basket-container">
                 <p>koszyk {carts.userId}</p>
                 <p>ilość produtków: {carts.totalProducts}</p>
