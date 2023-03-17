@@ -1,5 +1,3 @@
-import { useEffect } from "react"
-
 function Create() {
     
     function addBasket(e) {
@@ -22,7 +20,10 @@ function Create() {
             })
         })
             .then(res => res.json())
-            .then(console.log);
+            .then(data => {
+                console.log(data)
+                
+            });
     }
 
     return (
