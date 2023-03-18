@@ -14,9 +14,9 @@ function Carts() {
             method: 'DELETE',
         })
             .then(res => res.json())
-            .then(data => {
-                alert(`Usunąłeś z serwera koszyk ${data.userId}`)
-            });
+            .then(
+                alert(`Usunąłeś z serwera koszyk`)
+            );
     }
 
     function addBasket(newbasket) {
