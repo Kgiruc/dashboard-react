@@ -2,6 +2,11 @@ import { useState } from "react";
 import ProductsForm from "./products/ProductsForm";
 
 function Create({ addBasket }) {
+    const [products, setProducts] = useState([])
+
+    const addProduct = product => setProducts([...products, product])
+
+    console.log("asdas", products)
 
 
     function getNewBasket(e) {
@@ -11,16 +16,7 @@ function Create({ addBasket }) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 userId: 1,
-                products: [
-                    {
-                        id: 1,
-                        quantity: 1,
-                    },
-                    {
-                        id: 50,
-                        quantity: 2,
-                    },
-                ]
+                products: products
             })
         })
             .then(res => res.json())
@@ -33,7 +29,7 @@ function Create({ addBasket }) {
     return (
         <>
             <button onClick={getNewBasket}>Add Basket</button>
-            <ProductsForm />
+            <ProductsForm addProductProp={addProduct}/>
         </>
     )
 }

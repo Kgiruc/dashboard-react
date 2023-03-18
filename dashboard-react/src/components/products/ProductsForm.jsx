@@ -1,20 +1,26 @@
 import { useEffect, useState } from "react"
 
-function ProductsForm() {
+function ProductsForm({addProductProp}) {
     const [product, setProduct] = useState([{}])
     const [text, setText] = useState("")
-    const [quantity, setQuantity] = useState(1)
+    const [quantity, setQuantity] = useState(Number)
 
     useEffect(() => {
         fetch(`https://dummyjson.com/products/search?q=${text}`)
             .then(res => res.json())
             .then(data => {
-                setProduct(data)
-                console.log(data)
-            });
+                setProduct(data.products)
+            })
+            .catch(err => console.log(err))
     }, [text])
 
-    // console.log(Object.keys(product.products).lenght)
+    function addProduct() {
+        addProductProp({
+            id: product[0].id,
+            quantity: quantity
+        })
+    }
+    
 
     return (
         <div>
@@ -23,16 +29,22 @@ function ProductsForm() {
                 <input
                     type="text"
                     required
+                    placeholder="iphone 9"
+                    value={text}
                     onChange={e => { setText(e.target.value) }}
+                    
                 />
+                {product.length > 0 ? <p>{product[0].title}</p> : <p>nie ma produktu</p> }
                 ilość:
                 <input
                     type="number"
                     required
+                    value={quantity}
+                    placeholder="1"
                     onChange={e => { setQuantity(e.target.value) }}
                 />
                 <p>{quantity}</p>
-                {text ? <p>{product.products[0].id}</p> : null}
+                <button onClick={addProduct}>add</button>
             </label>
         </div>
     )
