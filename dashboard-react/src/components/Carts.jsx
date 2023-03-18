@@ -29,7 +29,6 @@ function Carts() {
             .then(res => res.json())
             .then(data => {
                 setBasket(data.carts)
-                console.log(data.carts)
                 setLoading(false)
             })
             .catch(err => {

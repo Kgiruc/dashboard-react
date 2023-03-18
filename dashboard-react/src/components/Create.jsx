@@ -1,8 +1,9 @@
 import { useState } from "react";
+import ProductsForm from "./products/ProductsForm";
 
-function Create({addBasket}) {
-    // const [newBasket, setNewBasket] = useState([{}])
-    
+function Create({ addBasket }) {
+
+
     function getNewBasket(e) {
         e.preventDefault()
         fetch('https://dummyjson.com/carts/add', {
@@ -30,8 +31,11 @@ function Create({addBasket}) {
     }
 
     return (
-    <button onClick={getNewBasket}>Add Basket</button>
-  )
+        <>
+            <button onClick={getNewBasket}>Add Basket</button>
+            <ProductsForm />
+        </>
+    )
 }
 
 export default Create
