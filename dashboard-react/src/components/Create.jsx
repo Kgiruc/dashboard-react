@@ -1,6 +1,9 @@
-function Create() {
+import { useState } from "react";
+
+function Create({addBasket}) {
+    // const [newBasket, setNewBasket] = useState([{}])
     
-    function addBasket(e) {
+    function getNewBasket(e) {
         e.preventDefault()
         fetch('https://dummyjson.com/carts/add', {
             method: 'POST',
@@ -22,12 +25,12 @@ function Create() {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                
-            });
+                addBasket(data)
+            })
     }
 
     return (
-    <button onClick={addBasket}>Add Basket</button>
+    <button onClick={getNewBasket}>Add Basket</button>
   )
 }
 

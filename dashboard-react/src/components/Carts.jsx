@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import ListCarts from "./ListCarts"
+import Create from "./Create"
 
 
 function Carts() {
@@ -16,7 +17,10 @@ function Carts() {
             .then(data => {
                 alert(`Usunąłeś z serwera koszyk ${data.userId}`)
             });
+    }
 
+    function addBasket(newbasket) {
+        setBasket([...basket, newbasket])
     }
     
 
@@ -30,14 +34,19 @@ function Carts() {
             })
             .catch(err => {
                 console.log(err)
-                setLoading
             })
     }, [])
 
     return (
         <div>
-            {basket && <ListCarts basket={basket} deleteBasket={deleteBasket} />}
+            {basket &&
+            <>
+                <ListCarts basket={basket} deleteBasket={deleteBasket} />
+                <Create addBasket={addBasket}/>
+            </>
+            }
             {loading && <p>Loading...</p>}
+
         </div>
     )
 }
