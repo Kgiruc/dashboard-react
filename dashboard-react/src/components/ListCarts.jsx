@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Charts from './Charts'
 
 function ListCarts({ basket, deleteBasket }) {
 
@@ -10,7 +11,7 @@ function ListCarts({ basket, deleteBasket }) {
           <p>ilość produtków: {carts.totalProducts}</p>
           <div>
             <button onClick={() => deleteBasket(carts.id)}>x</button>
-            <button>statistic</button>
+            <Charts produkt={carts.products}/>
           </div>
         </div>
       ))}
