@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
-import ListCarts from "./ListCarts"
-import Create from "./products/Create"
+import ListCarts from "../baskets/ListCarts"
+import Create from "../products/Create"
 
 
 function Carts() {
     const [basket, setBasket] = useState()
     const [loading, setLoading] = useState(true)
+    const [open, setOpen] = useState(false)
 
     function deleteBasket(id) {
         const newList = Object.values(basket).filter(e => e.id != id)
@@ -41,7 +42,8 @@ function Carts() {
             {basket &&
             <>
                 <ListCarts basket={basket} deleteBasket={deleteBasket} />
-                <Create addBasket={addBasket}/>
+                <button onClick={() => setOpen(true)}>dodaj koszyk</button>
+                {open && <Create addBasket={addBasket} setOpen={setOpen}/>}
             </>
             }
             {loading && <p>Loading...</p>}
