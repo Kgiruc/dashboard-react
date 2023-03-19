@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ListCarts from "./ListCarts"
-import Create from "./Create"
+import Create from "./products/Create"
 
 
 function Carts() {

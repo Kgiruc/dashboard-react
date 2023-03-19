@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 function ProductsForm({addProductProp}) {
     const [product, setProduct] = useState([{}])
     const [text, setText] = useState("")
-    const [quantity, setQuantity] = useState(Number)
+    const [quantity, setQuantity] = useState(1)
 
     useEffect(() => {
         fetch(`https://dummyjson.com/products/search?q=${text}`)
@@ -17,7 +17,8 @@ function ProductsForm({addProductProp}) {
     function addProduct() {
         addProductProp({
             id: product[0].id,
-            quantity: quantity
+            quantity: quantity,
+            title: product[0].title
         })
     }
     

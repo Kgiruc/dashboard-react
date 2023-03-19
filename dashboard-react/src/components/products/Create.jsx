@@ -1,5 +1,6 @@
 import { useState } from "react";
-import ProductsForm from "./products/ProductsForm";
+import ListProducts from "./ListProducts";
+import ProductsForm from "./ProductsForm";
 
 function Create({ addBasket }) {
     const [products, setProducts] = useState([])
@@ -30,6 +31,7 @@ function Create({ addBasket }) {
         <>
             <button onClick={getNewBasket}>Add Basket</button>
             <ProductsForm addProductProp={addProduct}/>
+            {products && <ListProducts products={products}/>}
         </>
     )
 }
