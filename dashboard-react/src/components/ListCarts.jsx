@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Charts from './Charts'
 
 function ListCarts({ basket, deleteBasket }) {
+  const[open,setOpen] = useState()
 
   return (
     <div className='baskets'>
@@ -11,7 +12,8 @@ function ListCarts({ basket, deleteBasket }) {
           <p>ilość produtków: {carts.totalProducts}</p>
           <div>
             <button onClick={() => deleteBasket(carts.id)}>x</button>
-            <Charts produkt={carts.products}/>
+            <button onClick={() => setOpen(carts.id)}>Statystyka koszyka</button>
+            {open === carts.id && <Charts produkt={carts.products} setOpen={setOpen}/>}
           </div>
         </div>
       ))}

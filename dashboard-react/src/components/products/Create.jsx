@@ -15,7 +15,7 @@ function Create({ addBasket }) {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                userId: 1,
+                userId: 2,
                 products: products
             })
         })

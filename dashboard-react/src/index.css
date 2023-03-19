@@ -17,3 +17,8 @@
 .basket-container:hover {
     background-color: yellow;
 }
+
+.dota{
+    width: 80vh;
+    height: 20vh;
+}
