@@ -6,8 +6,7 @@ function Create({ addBasket }) {
     const [products, setProducts] = useState([])
 
     const addProduct = product => setProducts([...products, product])
-
-    console.log("asdas", products)
+    const deleteProduct = id => setProducts(products.filter(productItem => productItem.id != id))
 
 
     function getNewBasket(e) {
@@ -24,14 +23,15 @@ function Create({ addBasket }) {
             .then(data => {
                 console.log(data)
                 addBasket(data)
+                setProducts([])
             })
     }
 
     return (
         <>
             <button onClick={getNewBasket}>Add Basket</button>
-            <ProductsForm addProductProp={addProduct}/>
-            {products && <ListProducts products={products}/>}
+            <ProductsForm addProductProp={addProduct} />
+            {products && <ListProducts products={products} deleteProductProp={deleteProduct}/>}
         </>
     )
 }
