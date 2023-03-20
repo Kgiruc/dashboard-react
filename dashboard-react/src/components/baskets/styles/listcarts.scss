@@ -1,5 +1,22 @@
 .baskets__container {
     display: grid;
-    grid-column: 2;
-    color:red;
+    gap: 3rem;
+    justify-content: center;
+    grid-auto-columns: calc(33% - 15px);
+}
+
+.basket-container {
+    border: 0.3rem solid $color-blank-white;
+    border-radius: 10px;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(3) {
+        grid-column: 3;
+    }
+
+    &:hover {
+        background-color: $color-light-white;
+    }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Charts from './Charts'
+import basket from "../../assets/icons/basket.png"
 
 function ListCarts({ basket, deleteBasket }) {
   const[open,setOpen] = useState()
@@ -8,6 +9,7 @@ function ListCarts({ basket, deleteBasket }) {
     <div className='baskets__container'>
       {basket.map((carts) => (
         <div key={carts.id} className="basket-container">
+          <img className='basket-container__image' alt='basket' src='basket'/>
           <p>koszyk {carts.userId}</p>
           <p>ilość produtków: {carts.totalProducts}</p>
           <div>
