@@ -1,0 +1,15 @@
+.carts__container {
+    padding-top: 2rem;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+
+    h1 {
+        font-size: $font-head1;
+        font-family: $font-alt;
+        font-weight: 500;
+        color: $color-light-white;
+        margin-bottom: 3rem;
+    }
+}

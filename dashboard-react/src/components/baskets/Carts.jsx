@@ -38,16 +38,16 @@ function Carts() {
     }, [])
 
     return (
-        <div>
+        <div className="carts__container">
+            <h1>DASHBOARD</h1>
             {basket &&
             <>
                 <ListCarts basket={basket} deleteBasket={deleteBasket} />
-                <button onClick={() => setOpen(true)}>dodaj koszyk</button>
+                <button className="carts__button" onClick={() => setOpen(true)}>dodaj koszyk</button>
                 {open && <Create addBasket={addBasket} setOpen={setOpen}/>}
             </>
             }
             {loading && <p>Loading...</p>}
-
         </div>
     )
 }

@@ -5,7 +5,7 @@ function ListCarts({ basket, deleteBasket }) {
   const[open,setOpen] = useState()
 
   return (
-    <div className='baskets'>
+    <div className='baskets__container'>
       {basket.map((carts) => (
         <div key={carts.id} className="basket-container">
           <p>koszyk {carts.userId}</p>
