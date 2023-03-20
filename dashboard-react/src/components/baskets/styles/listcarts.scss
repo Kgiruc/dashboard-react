@@ -8,9 +8,17 @@
 .basket-container {
     border: 0.3rem solid $color-blank-white;
     border-radius: 10px;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 0.5rem;
     display: flex;
+    justify-content: start;
+    gap: 1rem;
+    align-items: center;
     flex-direction: column;
+    font-family: $font-alt;
+    font-weight: 300;
+    font-size: $font-subhead1;
+    color: $color-white;
+    text-transform: capitalize;
 
     &:nth-child(3) {
         grid-column: 3;
@@ -18,5 +26,42 @@
 
     &:hover {
         background-color: $color-light-white;
+    }
+}
+
+.baskets__buttons__container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    justify-content: space-between;
+    
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        filter: brightness(0) invert(1);
+        
+        &:hover {
+            filter: none;
+        }
+    }
+}
+
+
+.basket-container {
+    &__basket-logo {
+        width: 7rem;
+        height: 7rem;
+        filter: brightness(0) invert(1);
+    }
+
+    &__bin-logo {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__chart-logo {
+        width: 2rem;
+        height: 2rem;
     }
 }

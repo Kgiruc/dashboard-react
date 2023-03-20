@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ListCarts from "../baskets/ListCarts"
-import Create from "../products/Create"
+import Create from "../products/Create";
 
 
 function Carts() {
@@ -42,6 +42,7 @@ function Carts() {
             <h1>DASHBOARD</h1>
             {basket &&
             <>
+            
                 <ListCarts basket={basket} deleteBasket={deleteBasket} />
                 <button className="carts__button" onClick={() => setOpen(true)}>dodaj koszyk</button>
                 {open && <Create addBasket={addBasket} setOpen={setOpen}/>}
