@@ -23,7 +23,7 @@ function Carts() {
     function addBasket(newbasket) {
         setBasket([...basket, newbasket])
     }
-    
+
 
     useEffect(() => {
         fetch('https://dummyjson.com/carts')
@@ -39,14 +39,15 @@ function Carts() {
 
     return (
         <div className="carts__container">
-            <h1>DASHBOARD</h1>
+            <div className="header">
+                <h1>DASHBOARD</h1>
+            </div>
             {basket &&
-            <>
-            
-                <ListCarts basket={basket} deleteBasket={deleteBasket} />
-                <button className="carts__button" onClick={() => setOpen(true)}>dodaj koszyk</button>
-                {open && <Create addBasket={addBasket} setOpen={setOpen}/>}
-            </>
+                <div className="baskets">
+                    <ListCarts basket={basket} deleteBasket={deleteBasket} />
+                    <button className="carts__button" onClick={() => setOpen(true)}>dodaj koszyk</button>
+                    {open && <Create addBasket={addBasket} setOpen={setOpen} />}
+                </div>
             }
             {loading && <p>Loading...</p>}
         </div>
