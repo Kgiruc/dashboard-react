@@ -1,0 +1,34 @@
+.products__container {
+    width: 45dvw;
+    height: auto;
+    padding: 2rem;
+    background-color: $color-white;
+    border: 3px solid $color-light-purple;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: $font-base;
+    font-size: $font-subhead2;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $color-light-gray;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    img {
+        width: 2rem;
+        height: 2rem;
+    }
+}

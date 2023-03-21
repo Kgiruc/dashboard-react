@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import add_logo from "../../assets/icons/add.png"
 
-function ProductsForm({addProductProp}) {
+function ProductsForm({ addProductProp }) {
     const [product, setProduct] = useState([{}])
     const [text, setText] = useState("")
     const [quantity, setQuantity] = useState(1)
@@ -21,10 +22,10 @@ function ProductsForm({addProductProp}) {
             title: product[0].title
         })
     }
-    
+
 
     return (
-        <div>
+        <div className="form__container">
             <label>
                 nazwa produktu:
                 <input
@@ -33,9 +34,9 @@ function ProductsForm({addProductProp}) {
                     placeholder="iphone 9"
                     value={text}
                     onChange={e => { setText(e.target.value) }}
-                    
+
                 />
-                {product.length > 0 ? <p>{product[0].title}</p> : <p>nie ma produktu</p> }
+
                 ilość:
                 <input
                     type="number"
@@ -44,8 +45,11 @@ function ProductsForm({addProductProp}) {
                     placeholder="1"
                     onChange={e => { setQuantity(e.target.value) }}
                 />
-                <p>{quantity}</p>
-                <button onClick={addProduct}>add</button>
+                <div className="form__results">
+                    {product.length > 0 ? <p>{product[0].title}</p> : <p>nie ma produktu</p>}
+                    <p>x{quantity}</p>
+                    <button onClick={addProduct}><img src={add_logo} alt="add"/></button>
+                </div>
             </label>
         </div>
     )

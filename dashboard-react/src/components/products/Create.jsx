@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ListProducts from "./ListProducts";
 import ProductsForm from "./ProductsForm";
+import add_basket_logo from '../../assets/icons/correct.png'
 
 function Create({ addBasket, setOpen }) {
     const [products, setProducts] = useState([])
@@ -28,10 +29,17 @@ function Create({ addBasket, setOpen }) {
     }
 
     return (
-        <>  
-            {products.length > 0 &&<button onClick={getNewBasket}>Add Basket</button>}
+        <>
+            
             <ProductsForm addProductProp={addProduct} />
             {products && <ListProducts products={products} deleteProductProp={deleteProduct} />}
+            {products.length > 0 &&
+                <button
+                    className="add__buttton"
+                    onClick={getNewBasket}
+                >
+                    <img src={add_basket_logo} alt="dodaj nowy koszyk" />
+                </button>}
         </>
     )
 }

@@ -1,10 +1,29 @@
-.dota {
+.chart__container {
     z-index: 10;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 10rem;
-    width: 80dvw;
-    height: 80dvh;
-    background-color: aqua;
+    top: 30%;
+    width: 70dvw;
+    height: 50rem;
+    padding: 2rem 4rem;
+    border: 3px solid $color-light-purple;
+    border-radius: 10px;
+    background-color: $color-white;
+    -webkit-box-shadow: 13px 18px 49px 5px rgba(16, 15, 16, 1);
+    -moz-box-shadow: 13px 18px 49px 5px rgba(16, 15, 16, 1);
+    box-shadow: 13px 18px 49px 5px rgba(16, 15, 16, 1);
+
+        .back__button {
+            border: none;
+            background-color: transparent;
+
+                &:hover{
+                    transform: scale(1.2);
+                }
+            img{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
 }

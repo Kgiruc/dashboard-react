@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import ListCarts from "../baskets/ListCarts"
 import Create from "../products/Create";
+import loading_gif from "../../assets/gifs/loading.gif"
 
 
 function Carts() {
@@ -49,7 +50,7 @@ function Carts() {
                     {open && <Create addBasket={addBasket} setOpen={setOpen} />}
                 </div>
             }
-            {loading && <p>Loading...</p>}
+            {loading && <img className="loading" src={loading_gif} alt="loading"/>}
         </div>
     )
 }
