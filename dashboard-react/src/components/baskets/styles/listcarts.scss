@@ -70,3 +70,31 @@
         height: 2rem;
     }
 }
+
+
+@media screen and (max-width: 768px){
+    .baskets__container {
+        gap: 2rem;
+    }
+
+    .basket-container {
+        font-size: $font-subhead2;
+    }
+
+    .basket-container {
+        &__basket-logo {
+            width: 5rem;
+            height: 5rem;
+        }
+    
+        &__bin-logo {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    
+        &__chart-logo {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}

@@ -6,15 +6,15 @@ function Charts({produkt, setOpen}) {
   return (
     <div className="chart__container">
       <button className="back__button" onClick={() => setOpen()}><img src={back} alt="wróć"/></button>
-      <ResponsiveContainer>
-      <LineChart  data={produkt}>
-        <Line type="monotone" dataKey="price" stroke="#000" strokeWidth={3} />
-        <Line type="monotone" dataKey="discountedPrice" stroke="#700899" strokeWidth={3} />
+      <ResponsiveContainer width="100%" aspect={0.9} >
+      <LineChart  data={produkt} margin={{bottom: 50, left: 40 }} >
+        <Line  dataKey="price" stroke="#000" strokeWidth={3} />
+        <Line  dataKey="discountedPrice" stroke="#700899" strokeWidth={3} />
         <CartesianGrid stroke="#ccc"/>
-        <XAxis dataKey="title" fontSize={10} padding={{left: 20, right: 20}}/>
-        <YAxis />
+        <XAxis dataKey="title" interval={0} angle={-20} dy={16} fontSize={10} textAnchor="end" padding={{left: 20, right: 20}}/>
+        <YAxis  fontSize={10}/>
         <Tooltip />
-        <Legend />
+        <Legend verticalAlign="top" height={36}/>
       </LineChart>
       </ResponsiveContainer>
     </div>

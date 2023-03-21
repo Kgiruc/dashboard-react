@@ -32,3 +32,16 @@
         height: 2rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .products__container {
+        width: 50dvw;
+        font-size: $font-typical;
+        margin-bottom: 1rem;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+}

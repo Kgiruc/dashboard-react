@@ -44,7 +44,7 @@ function Carts() {
                 <h1>DASHBOARD</h1>
             </div>
             {basket &&
-                <div className="baskets">
+                <div className="allresult">
                     <ListCarts basket={basket} deleteBasket={deleteBasket} />
                     <button className="carts__button" onClick={() => setOpen(true)}>dodaj koszyk</button>
                     {open && <Create addBasket={addBasket} setOpen={setOpen} />}

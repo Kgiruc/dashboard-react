@@ -23,11 +23,17 @@
     }
 }
 
-.baskets {
+.allresult {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+.listcarts__container {
+    display: grid;
+    grid-column: 2;
 }
 
 .carts__button {
