@@ -34,3 +34,10 @@
         padding: 1rem 2rem;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .chart__container {
+        height: 50dvh;
+        padding: 1rem;
+    }
+}

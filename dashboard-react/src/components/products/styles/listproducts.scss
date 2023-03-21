@@ -45,3 +45,16 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .products__container {
+        width: 70dvw;
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+
+        img {
+            width: 1.3rem;
+            height: 1.3rem;
+        }
+    }
+}

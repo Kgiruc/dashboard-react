@@ -98,3 +98,23 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .baskets__container {
+        margin: 1rem 0;
+        gap: 1rem;
+        max-width: 100dvw;
+        grid-auto-columns: calc(33% - -37px);
+    }
+
+    .basket-container {
+        font-size: $font-typical;
+        &:nth-child(3) {
+            grid-column: 1;
+        }
+
+        &:nth-child(2) {
+            grid-column: 2;
+        }
+    }
+}

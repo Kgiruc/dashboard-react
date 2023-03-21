@@ -28,6 +28,7 @@ label {
         height: 2rem;
         border: 2px solid $color-purple;
         border-radius: 5px;
+        padding-left: 1rem;
     }
 }
 
@@ -65,5 +66,37 @@ label {
 
     label {
         font-size: $font-subhead2;
+
+        input {
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form__container {
+        width: 90dvw;
+    }
+
+    label {
+        gap: 0.2rem;
+        font-size: $font-subhead2;
+
+        input {
+            font-size: $font-typical;
+        }
+    }
+
+    .form__results {
+        margin-top: 2rem;
+        font-size: $font-typical;
+        gap: 2.2rem;
+
+        button {
+            img {
+                width: 1.7rem;
+                height: 1.7rem;
+            }
+        }
     }
 }

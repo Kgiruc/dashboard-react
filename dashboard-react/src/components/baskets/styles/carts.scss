@@ -62,3 +62,19 @@
     width: 10rem;
     height: 10rem;
 }
+
+@media screen and (max-width: 600px) {
+    .header {
+        height: 3rem
+    }
+
+    .header h1 {
+        margin-left: 1rem;
+        font-size: $font-subhead1;
+    }
+
+    .carts__button {
+        width: 90%;
+    }
+
+}
