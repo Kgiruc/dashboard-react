@@ -2,7 +2,6 @@ import {CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XA
 import back from "../../assets/icons/back.png"
 
 function Charts({produkt, setOpen}) {
-    console.log(produkt)
   return (
     <div className="chart__container">
       <button className="back__button" onClick={() => setOpen()}><img src={back} alt="wróć"/></button>
