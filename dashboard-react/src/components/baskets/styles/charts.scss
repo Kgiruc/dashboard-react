@@ -3,9 +3,9 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
-    top: 30%;
+    top: 50dvh;
     width: 70dvw;
-    height: 50rem;
+    height: auto;
     padding: 2rem 4rem 10rem;
     border: 3px solid $color-light-purple;
     border-radius: 10px;
@@ -37,7 +37,7 @@
 
 @media screen and (max-width: 600px) {
     .chart__container {
-        height: 50dvh;
+        height: auto;
         padding: 1rem;
     }
 }
