@@ -2,7 +2,7 @@ import { waitFor } from "@testing-library/react";
 import { describe } from "vitest";
 import ListProducts from "../ListProducts";
 
-describe("Create componenets", () => {
+describe("ListProducts componenets", () => {
     it("render names"), async() => {
         render(<ListProducts />)
     await waitFor(() => {

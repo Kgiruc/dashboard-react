@@ -11,6 +11,7 @@ describe("Create componenets", () => {
         screen.getByText('ilość')
         screen.getByText('iPhone 9 x1')
         screen.getByRole('img', {name: 'add_basket_logo'})
+        screen.getByRole('img', {name: 'add_basket_logo'})
     })
     }
 })
